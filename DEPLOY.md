@@ -80,6 +80,13 @@ build passes, preview serves HTTP 200, and the dashboard's RPC reads match
 (~0.497 NEAR left after the demo runs); delete the key and re-run
 `npm run issue-fck` if it ever runs dry.
 
+## GitHub (pushed 2026-11-07)
+
+Public repo: https://github.com/otis-tran/agent-spend-guard
+(branch `main`, snapshot commit `203f874435867f53dc863538f8d53d791bdf5839`,
+39 files - no `.env`, keys, `node_modules`, `target/` or wasm, per `.gitignore`).
+
 ## Next build steps
 
-1. GitHub repo + batched push, demo post on X, submission.
+1. Demo post on X (tag @NEARProtocol, #NEARHackathon) and submission before
+   2026-11-14 23:59 UTC.
