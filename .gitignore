@@ -1,0 +1,13 @@
+.env
+*.env.local
+# NEAR agent-skills installs (reproducible: npx skills add near/agent-skills)
+.agents/
+.claude/
+agent/
+node_modules/
+dist/
+target/
+neardev/
+.near/
+*.wasm
+.DS_Store

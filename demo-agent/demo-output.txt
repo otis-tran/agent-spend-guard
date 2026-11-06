@@ -1,0 +1,19 @@
+
+> demo-agent@0.1.0 start
+> tsx src/index.ts
+
+Agent agent1.agentspendguard.testnet (Function Call Key only)
+Policy budget remaining today: 1 NEAR
+
+Scenario 1 - normal task payment, inside policy:
+  ✅ ALLOWED  spend 0.2 NEAR -> agentspendguard.testnet
+     tx: https://testnet.nearblocks.io/txns/32pgpHgfibtqj4UdTvjgr7NirBL71MEGNi9wH6jdbM2X
+Scenario 2 - agent is prompt-injected and tries to overspend:
+  ⛔ BLOCKED  spend 0.6 NEAR -> agentspendguard.testnet (per-tx limit is 0.5) - BLOCKED: amount exceeds the per-transaction limit
+Scenario 3 - injected agent tries to pay an unknown wallet:
+  ⛔ BLOCKED  spend 0.1 NEAR -> testnet (not whitelisted) - BLOCKED: receiver is not in the whitelist
+Scenario 4 - compromised agent tries an admin call with its key:
+  ⛔ BLOCKED  pause_agent with a spend-only key - rejected before reaching contract logic
+
+Remaining daily budget after demo: 0.8 NEAR
+Only the in-policy 0.2 NEAR spend was counted. The vault and the owner's wallet were never at risk.
